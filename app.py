@@ -1,12 +1,12 @@
 import os
-from flask import Flask
-#수정했어용 3:56
+from flask import Flask, render_template
+#수정해써 4:06
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello, Render!"
+    return render_template("index.html")  # index.html 템플릿을 렌더링
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # PORT 환경 변수를 사용
-    app.run(host="0.0.0.0", port=port)        # 0.0.0.0으로 설정해 외부 접근 허용
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
