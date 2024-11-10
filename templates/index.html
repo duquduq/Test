@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 테스트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 나머지 HTML 내용은 그대로 유지 -->
+</body>
+</html>
+
+
+</head>
+<body>
+    <header>
+        <h1>환영합니다!</h1>
+        <p>나 주인선 아니다.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>소개</h2>
+            <p>[이곳에 소개 적기]</p>
+        </section>
+
+        <section>
+            <h2>기능</h2>
+            <p>[이곳에 기능 추가]</p>
+        </section>
+    </main>
+
+    <section>
+        <h2>눌러서 확인하기</h2>
+        <button onclick="toggleContent()">더보기</button>
+        <p id="hiddenContent" style="display: none;">섹스.</p>
+    </section>
+    
+    <section>
+        <h2>원형 그래프</h2>
+        <canvas id="myPieChart" width="400" height="400"></canvas>
+    </section>
+    
+
+    <footer>
+        <p>&copy; DANDAEGI</p>
+    </footer>
+</body>
+</html>
