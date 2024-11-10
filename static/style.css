@@ -39,3 +39,9 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+#myPieChart {
+    width: 400px;   /* 원하는 너비 */
+    height: 400px;  /* 원하는 높이 */
+    margin: 0 auto; /* 가운데 정렬 (옵션) */
+}

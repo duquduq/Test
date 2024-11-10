@@ -7,7 +7,7 @@ function toggleContent() {
     }
 }
 
-// 원형 그래프함수
+// 원형 그래프 함수
 function drawPieChart() {
     const ctx = document.getElementById('myPieChart').getContext('2d');
     new Chart(ctx, {
@@ -34,6 +34,7 @@ function drawPieChart() {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,  // 비율 유지 해제
             plugins: {
                 legend: {
                     position: 'top',
@@ -42,6 +43,7 @@ function drawPieChart() {
         }
     });
 }
+
 
 // 페이지가 로드될 때 그래프 그림.
 window.onload = function() {
