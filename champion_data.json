@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Aatrox",
+        "win_rate": "52.3%",
+        "pick_rate": "12.5%",
+        "build": ["Item1", "Item2", "Item3"],
+        "image_url": "https://ddragon.leagueoflegends.com/cdn/13.10.1/img/champion/Aatrox.png"
+    },
+    {
+        "name": "Ahri",
+        "win_rate": "47.8%",
+        "pick_rate": "9.3%",
+        "build": ["Item4", "Item5", "Item6"],
+        "image_url": "https://ddragon.leagueoflegends.com/cdn/13.10.1/img/champion/Ahri.png"
+    },
+    {
+        "name": "Akali",
+        "win_rate": "55.1%",
+        "pick_rate": "15.0%",
+        "build": ["Item7", "Item8", "Item9"],
+        "image_url": "https://ddragon.leagueoflegends.com/cdn/13.10.1/img/champion/Akali.png"
+        
+    }
+]
+
+

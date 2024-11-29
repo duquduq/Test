@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <!-- 로고를 담는 컨테이너 -->
+        <div class="logo-container">
+            <!-- 로고 이미지 -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Dandaegi Logo" class="logo">
+            <!-- Flask의 `url_for`를 사용해 static 디렉터리에서 로고 이미지 파일을 가져옵니다 -->
+        </div>
+        
+        <!-- 내비게이션 바 -->
+        <nav>
+            <!-- 내비게이션 메뉴 항목 리스트 -->
+            <ul>
+                <!-- 각 항목은 리스트 아이템으로 정의 -->
+                <li><a href="/">홈</a></li>
+                <!-- '/'는 메인 페이지를 가리킴 -->
+                <li><a href="/champions">챔피언 분석</a></li>
+                <!-- '/champions'는 챔피언 분석 페이지로 이동 -->
+            </ul>
+        </nav>
+    </header>
+</body>
+
+
+
+<div class="search-container">
+    <input type="text" id="search-bar" placeholder="챔피언 검색" onkeyup="filterChampions()" />
+</div>
+
+
+<script>
+    function filterChampions() {
+        const query = document.getElementById('search-bar').value.toLowerCase();
+        const champions = document.querySelectorAll('.champion-face');
+        champions.forEach(champ => {
+            const name = champ.textContent.toLowerCase();
+            champ.style.display = name.includes(query) ? 'block' : 'none';
+        });
+    }
+</script>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챔피언 목록</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="content-container">
+        <!-- 챔피언 리스트 -->
+        <div class="champion-list-container">
+            <div class="champion-list">
+                {% for champion in champions %}
+                <div class="champion-face">
+                    <img src="{{ champion.image_url }}" alt="{{ champion.name_ko }}">
+                    <span>{{ champion.name_ko }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- 챔피언 분석 테이블 -->
+      <div class="champion-table-container">
+    {% for champion in champions %}
+    <div class="champion-entry">
+        <div class="champion-info">
+            <img src="{{ champion.image_url }}" alt="{{ champion.name_ko }}" class="champion-img">
+            <span class="champion-name">{{ champion.name_ko }}</span>
+        </div>
+        <div class="champion-stats">
+            <span>승률: {{ champion.win_rate }}</span>
+            <span>픽률: {{ champion.pick_rate }}</span>
+        </div>
+        <div class="champion-build">
+            <div class="item-build">
+                {% for item in champion.build_images[:3] %}
+                <img src="{{ item }}" alt="item" class="item-img">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+        
+        
+
+
+
+
+<!-- JavaScript 추가 -->
+<script>
+    function filterChampions() {
+        const query = document.getElementById("search-bar").value.toLowerCase();
+        const champions = document.querySelectorAll(".champion-face");
+
+        champions.forEach(champion => {
+            const name = champion.textContent.toLowerCase();
+            if (name.includes(query)) {
+                champion.style.display = "block";
+            } else {
+                champion.style.display = "none";
+            }
+        });
+    }
+</script>
+
+
+    
+   
+    <!-- 푸터 -->
+    <footer>
+        <p>© 2024 Team Dandaegi Project</p>
+    </footer>
+</body>
+</html>

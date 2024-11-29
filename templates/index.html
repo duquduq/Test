@@ -3,50 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML 테스트</title>
+    <title>홈</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-    <!-- 나머지 HTML 내용은 그대로 유지 -->
-</body>
-</html>
 
 
-</head>
+
 <body>
+    <!-- 헤더 -->
     <header>
-        <h1>환영합니다!</h1>
-        <p>나 주인선 아니다.</p>
+        <!-- 로고를 담는 컨테이너 -->
+        <div class="logo-container">
+            <!-- 로고 이미지 -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Dandaegi Logo" class="logo">
+            <!-- Flask의 `url_for`를 사용해 static 디렉터리에서 로고 이미지 파일을 가져옵니다 -->
+        </div>
+        
+        <!-- 내비게이션 바 -->
+        <nav>
+            <!-- 내비게이션 메뉴 항목 리스트 -->
+            <ul>
+                <!-- 각 항목은 리스트 아이템으로 정의 -->
+                <li><a href="/">홈</a></li>
+                <!-- '/'는 메인 페이지를 가리킴 -->
+                <li><a href="/champions">챔피언 분석</a></li>
+                <!-- '/champions'는 챔피언 분석 페이지로 이동 -->
+            </ul>
+        </nav>
     </header>
+</body>
 
-    <main>
-        <section>
-            <h2>소개</h2>
-            <p>[이곳에 소개 적기]</p>
-        </section>
-
-        <section>
-            <h2>기능</h2>
-            <p>[이곳에 기능 추가]</p>
-        </section>
-    </main>
-
-    <section>
-        <h2>눌러서 확인하기</h2>
-        <button onclick="toggleContent()">더보기</button>
-        <p id="hiddenContent" style="display: none;">섹스.</p>
-    </section>
-    
-    <section>
-        <h2>원형 그래프</h2>
-        <canvas id="myPieChart" width="400" height="400"></canvas>
-    </section>
     
 
+  
+    <!-- 푸터 -->
     <footer>
-        <p>&copy; DANDAEGI</p>
+        <p>© 2024 Data Science and Analysis Team Dandaegi</p>
     </footer>
 </body>
 </html>

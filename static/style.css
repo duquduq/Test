@@ -1,47 +1,234 @@
-/* 기본 설정 */
+/* 기본 스타일 */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     color: #333;
 }
 
-/* 헤더 스타일 */
+/* 로고 섹션 */
+.logo-container {
+    text-align: center;
+}
+
+/* 헤더 */
 header {
-    background-color: #4CAF50;
+    background-color: #F6D67B;
+    padding: 10px 20px;
     color: white;
-    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 1500px;
+    max-height: 150px;
+    height: auto;
+}
+
+/* 내비게이션 스타일 */
+nav {
+    background-color: #fdeec4;
+    padding: 10px 0;
     text-align: center;
 }
 
-/* 메인 콘텐츠 스타일 */
-main {
-    padding: 20px;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
 }
 
-/* 섹션 스타일 */
-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: white;
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(29, 65, 13);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 5px 10px;
     border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.1s ease, text-decoration 0.1s ease;
 }
 
-/* 푸터 스타일 */
-footer {
-    background-color: #333;
-    color: white;
+nav ul li a:hover {
+    background-color: #cfe2b3;
+    color: rgb(29, 65, 13);
+    text-decoration: underline;
+}
+
+
+/* 챔피언 검색 섹션 */
+.search-container {
+    width: 40%;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    margin-bottom: 20px;
 }
 
-#myPieChart {
-    width: 400px;   /* 원하는 너비 */
-    height: 400px;  /* 원하는 높이 */
-    margin: 0 auto; /* 가운데 정렬 (옵션) */
+#search-bar {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 챔피언 카드 섹션 */
+
+
+.champion-list {
+    width: calc(80px * 8 + 20px * 6); /* 초상화 이미지 너비 + 여백 */
+    margin-left: 20px; /* 왼쪽에 여백 추가 */
+
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 초상화 간 간격 조정 */
+    align-self: stretch;
+    
+}
+
+
+.champion-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 이미지와 텍스트를 가운데 정렬 */
+    width: 100px; /* 초상화와 텍스트를 감쌀 크기 */
+     /* 초상화 간 여백 */
+}
+
+
+.champion-face img {
+    width: 80px;
+    height: 80px;
+}
+
+.champion-face span {
+    display: block;
+    width: 80px; /* 초상화와 같은 너비 */
+    white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+    overflow: hidden; /* 넘치는 텍스트를 숨김 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 "..."으로 표시 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    margin-top: 5px; /* 이미지와 텍스트 간의 여백 */
+}
+
+
+
+/* 테이블 스타일 */
+
+.champion-name {
+    white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+    overflow: hidden; /* 넘치는 텍스트는 숨김 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 "..."으로 표시 */
+}
+.champion-img {
+    width: 50px; /* 원하는 너비로 설정 (현재 40px로 설정) */
+    height: 50px; /* 원하는 높이로 설정 */
+    border-radius: 5px; /* 모서리를 살짝 둥글게 */
+    object-fit: cover; /* 이미지가 잘리지 않게 유지 */
+}
+
+.item-build {
+    display: flex; /* 가로로 나열 */
+    gap: 10px; /* 아이템 이미지 간의 간격 */
+}
+.item-img {
+    width: 30px; /* 아이템 이미지 크기 */
+    height: 30px;
+}
+
+
+.main-container {
+    margin-left: calc(80px * 7 + 20px * 6 + 40px); /* champion-list의 너비 + 추가 여백 */
+    padding: 20px; /* 컨텐츠 여백 추가 */
+}
+
+.content-container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+    height: 550px; /* 전체 높이를 원하는 높이로 설정 */
+}
+
+.champion-list-container {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    height: 100%; /* 부모 컨테이너 높이를 유지 */
+    overflow-y: auto; /* 수직 스크롤 추가 */
+}
+
+.champion-table-container {
+    flex-grow: 1;
+    overflow-y: auto; /* 수직 스크롤 추가 */
+    max-height: 100%;
+    max-width: 40%;
+}
+
+
+
+.champion-list-horizontal {
+    display: flex;
+    flex-direction: column; /* 각 챔피언 항목을 세로로 쌓음 */
+    gap: 15px; /* 각 챔피언 항목 간 간격 */
+    padding: 20px;
+    height: 600px; /* 원하는 높이로 설정 */
+    overflow-y: auto; /* 스크롤 추가 */
+    border: 1px solid #ddd; /* 테두리 추가해 스크롤 영역을 구분 */
+}
+
+
+.champion-entry {
+    display: flex;
+    align-items: center; /* 모든 요소를 수직으로 가운데 정렬 */
+    justify-content: space-between; /* 요소 간 일정한 간격 유지 */
+    gap: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.champion-info,
+.champion-stats,
+.champion-build {
+    flex: 1; /* 각 요소의 너비를 동일하게 유지 */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 내부 요소 간 간격 */
+}
+
+.champion-info {
+    flex: 1.5; /* 챔피언 정보는 좀 더 넓게 */
+}
+
+.item-build {
+    display: flex;
+    gap: 5px;
+}
+/*  */
+footer {
+    position: fixed; /* 화면에 고정 */
+    bottom: 0; /* 아래쪽에 위치 */
+    right: 0; /* 오른쪽에 위치 */
+    padding: 10px; /* 텍스트 주변 여백 */
+    background-color: #f6d67b; /* 원하는 배경색 (기존 색과 일치하도록) */
+    color: #333; /* 텍스트 색상 */
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
 }
